@@ -1,0 +1,54 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.picture {
+    width: 100%;
+    height: 100%;
+}
+#artist-name{
+    background-color: grey;
+    color: white;
+    width: 30%;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+  
+}
+
+.artist-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  justify-content: center;
+}
+
+#artist-info{
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    width: 40%;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+/* #container-marketing{
+     margin: 1%;
+    left: 1000px;
+} */
+
+#row-featurette{
+margin-top: 5%;
+}

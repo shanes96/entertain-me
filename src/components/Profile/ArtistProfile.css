@@ -1,0 +1,43 @@
+/* .showInfo {
+    margin-left: 1200px;
+}
+
+h5 {
+    position: absolute;
+    bottom: -100px;
+    left: 16px;
+}
+
+.artist_header {
+    position: absolute;
+    bottom: 700px;
+    left: 16px;
+    color: white;
+}
+
+.spotify {
+    position: absolute;
+    bottom: -433px;
+    left: 0px;
+}
+
+.profile_header {
+    position: absolute;
+    bottom: 650px;
+    left: 16px;
+    color: white;
+} */
+
+#artist-profile-button{
+    margin: 15px;
+}
+
+ .section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+/* .card{
+    width: 18rem;
+}  */

@@ -1,35 +1,30 @@
 import { Link, useNavigate } from "react-router-dom"
+import { Nav } from "react-bootstrap"
 import "./Navbar.css"
 export const ArtistNav = () => {
     const navigate = useNavigate()
 
-    return (
-        <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/profile">Profile</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/artists">Artists</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/venues">Venues</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/createvent">Create Event</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/whyentertainme">Why Entertain Me?</Link>
-            </li>
-            {
+    return <>
+    <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="homepage" class="nav-link active"> Home</a></li>
+        <li class="nav-item"><a href="profile" class="nav-link" >Profile</a></li>
+        <li class="nav-item"><a href="artists" class="nav-link">Artists</a></li>
+        <li class="nav-item"><a href="venues" class="nav-link">Venues</a></li>
+        <li class="nav-item"><a href="createvent" class="nav-link">Create Event</a></li>
+        <li class="nav-item"><a href="nextplaylist" class="nav-link">Find Your Next Playlist</a></li>
+        {
                 localStorage.getItem("entertain_user")
-                    ? <li className="navbar__item navbar__logout">
-                        <Link className="navbar__link" to="" onClick={() => {
+                        ?<Nav.Link href ="/"className="navbar-link" to="" onClick={() => {
                             localStorage.removeItem("entertain_user")
                             navigate("/", {replace: true})
-                        }}>Logout</Link>
-                    </li>
+                        }}>Logout</Nav.Link>
                     : ""
             }
-        </ul>
-    )
+
+      </ul>
+    </header>
+  </div>
+</>
 }

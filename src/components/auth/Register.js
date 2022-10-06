@@ -71,11 +71,11 @@ export const Register = (props) => {
                 <fieldset>
                     <input onChange={(evt) => {
                         const copy = {...customer}
-                        copy.isStaff = evt.target.checked
+                        copy.isArtist = evt.target.checked
                         setCustomer(copy)
                     }}
-                        type="checkbox" id="isStaff" />
-                    <label htmlFor="email"> I am an employee </label>
+                        type="checkbox" id="isArtist" />
+                    <label htmlFor="email"> I am an artist </label>
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>

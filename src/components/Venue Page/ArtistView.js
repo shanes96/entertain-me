@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Button from 'react-bootstrap/Button';
+
 
 export const ArtistView = () => {
     const [reviews, setReviews]= useState([])
@@ -7,6 +9,7 @@ export const ArtistView = () => {
     const navigate = useNavigate()
 
     const displayedReviews = ()=> {
+        
         fetch (`http://localhost:8088/reviews`)
         .then (response => response.json())
         .then ((reviewArray)=> {
@@ -38,22 +41,26 @@ export const ArtistView = () => {
     return <>
     
     <h2>Venues</h2>
-    <button onClick={() => navigate("/venue/leavereview")}>Leave Review</button>
+    <button class="w-60 btn btn-primary btn-lg"onClick={() => navigate("/venue/leavereview")}>Leave Review</button>
     <article className= "artists">
                 
                 {   
                 
                      events.map(
                          (event) => {
-                            return <section className="ticket">                                
-                            <header> Venue Name:{event?.venue?.name}</header>
-
+                            return <section className="ticket"> 
+                            <div class="card mb-3">
+                             <div class="card-body"></div>   
+                             <img src={event?.venue?.venuePagePicture} class="card-img-top" alt="artist-picture" width="750" height="280" />                            
+                            <h5>{event?.venue?.name}</h5>
                                 <div>{reviews.map(
                                     (review)=>{
                                         if(review.venueId == event?.venueId){
                                         return <section className="ticket" key= {`review -- ${review.id}`}>
-                                            <header> Review:{review.description}</header>
-                                <button onClick={() => {
+                                            <header> What Other Artists Have Said About Playing Here: {review.description}</header>
+                                <button 
+                                class="w-60 btn btn-primary btn-lg"
+                                onClick={() => {
                                  fetch(`http://localhost:8088/reviews/${review.id}`,{
                                     method:"DELETE"
                                 })
@@ -67,6 +74,7 @@ export const ArtistView = () => {
                                     }
                                 }
                                 )}</div>
+                                </div>
                                     </section>
                         }
                     )

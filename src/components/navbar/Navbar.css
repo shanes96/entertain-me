@@ -2,13 +2,20 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    background-color: #2A2D34;
+    color: white;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    color: white;
 }
 
 .navbar__logout {
     margin-left: auto;
+}
+
+.navbar__link{
+    color: white;
 }
