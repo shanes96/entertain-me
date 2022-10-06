@@ -37,17 +37,11 @@
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    /* display: inline-block; */
     width: 40%;
     margin: 2px 2px;
     cursor: pointer;
     border-radius: 16px;
 }
-
-/* #container-marketing{
-     margin: 1%;
-    left: 1000px;
-} */
 
 #row-featurette{
 margin-top: 5%;

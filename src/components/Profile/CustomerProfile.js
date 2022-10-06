@@ -87,10 +87,6 @@ export const CustomerProfile = () => {
                                 (artist)=> {
                                     if(event.artistId===artist.id){
                             return <section key={`event--${event.id}`}>
-                          {/* <div className="album py-1 bg-light"> */}
-                        {/* <div id="displayed-shows"className="container"> */}
-                         {/* <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">  */}
-                             {/* <div className="d-flex align-items-start"> */}
                             <div className="col-15"> 
                             <div className="card shadow-sm">
                                 <img className="bd-placeholder-img card-img-top" width="100%" height="225" src= {artist.profilePageImage} role="img" aria-label="Placeholder: Thumbnail" />
@@ -107,12 +103,7 @@ export const CustomerProfile = () => {
                                     </p>
                              </div>
                                  </div>
-                                </div> 
-                            {/* </div> */}
-                        {/* </div>  */}
-                            {/* </div> */}
-                            {/* </div>  */}
-                        
+                                </div>                         
                             </section>
                                     }
                                 }

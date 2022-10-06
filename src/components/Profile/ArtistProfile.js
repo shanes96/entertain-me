@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./ArtistProfile.css"
+// import "./ArtistProfile.css"
 
 export const ArtistProfile = () => {
 
@@ -83,10 +82,7 @@ export const ArtistProfile = () => {
                         (event) => {
                             if (event.userId === entertainUserObject.id) {
                                 return <section className="" key={`event -- ${event.id}`}>
-                                    {/* <div className="album py-5 bg-light"> */}
-                                        {/* <div className="container"> */}
                                             <div className="col-7">
-                                                {/* <div className="col"> */}
                                                     <div className="card shadow-sm">
                                                         <img className="bd-placeholder-img card-img-top" width="100%" height="225" src={event?.venue?.venuePagePicture} role="img" aria-label="Placeholder: Thumbnail" />
                                                         <div className="card-body">
@@ -113,9 +109,6 @@ export const ArtistProfile = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            {/* </div> */}
-                                        {/* </div> */}
-                                    {/* </div> */}
                                 </section>
                             }
                         }

@@ -8,12 +8,12 @@ export const UpdateEventForm = () => {
     const [venues, setVenues] = useState([])
 
     const [newEvent, update] = useState({
-        artistId:parseInt(""),
-        venueId:parseInt(""),
-        ticketPrice:"",
-        date:"",
-        time:"",
-        description:""
+        artistId: parseInt(""),
+        venueId: parseInt(""),
+        ticketPrice: "",
+        date: "",
+        time: "",
+        description: ""
     })
 
     const { eventId } = useParams()
@@ -48,7 +48,7 @@ export const UpdateEventForm = () => {
         []
     )
 
-    const navigate = useNavigate ()
+    const navigate = useNavigate()
     const localEntertainUser = localStorage.getItem("entertain_user")
     const entertainUserObject = JSON.parse(localEntertainUser)
 
@@ -74,7 +74,7 @@ export const UpdateEventForm = () => {
             <h2 className="ticketForm__title">Update Event!</h2>
             <fieldset>
                 <div className="form-group">
-                     <label for="address" class="form-label">Event Description</label>
+                    <label for="address" class="form-label">Event Description</label>
                     <input
                         required autoFocus
                         type="text"
@@ -83,8 +83,8 @@ export const UpdateEventForm = () => {
                         value={newEvent.description}
                         onChange={
                             (evt) => {
-                                const copy= {...newEvent}
-                                copy.description= evt.target.value
+                                const copy = { ...newEvent }
+                                copy.description = evt.target.value
                                 update(copy)
                             }
                         } />
@@ -92,61 +92,55 @@ export const UpdateEventForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                <label for="address" class="form-label">What Artist Are You?</label>
-                        <select value={newEvent.artist}
+                    <label for="address" class="form-label">What Artist Are You?</label>
+                    <select value={newEvent.artist}
                         class="form-select" id="venue"
                         onChange={
                             (evt) => {
-                                const copy= {...newEvent}
-                                copy.artist= evt.target.value
+                                const copy = { ...newEvent }
+                                copy.artist = evt.target.value
                                 update(copy)
                             }
                         }>
-                        <option value= {0}>Choose Artist</option>
+                        <option value={0}>Choose Artist</option>
                         {
                             artists.map(
                                 artist => <option
-                                value= {artist.id}>
+                                    value={artist.id}>
                                     {artist?.user?.name}
                                 </option>
                             )
                         }
-                        {/* <option value= "1">Bruno Mars</option>
-                        <option value= "2">Post Malone</option>
-                        <option value= "3">The 1975</option> */}
-                        </select>
-                        </div>
-                        </fieldset>
+                    </select>
+                </div>
+            </fieldset>
             <fieldset>
                 <div className="form-group">
-                <label for="address" class="form-label">Where Will You Be Playing At?</label>
-                        <select value={newEvent.venue}
+                    <label for="address" class="form-label">Where Will You Be Playing At?</label>
+                    <select value={newEvent.venue}
                         class="form-select" id="venue"
                         onChange={
                             (evt) => {
-                                const copy= {...newEvent}
-                                copy.venue= evt.target.value
+                                const copy = { ...newEvent }
+                                copy.venue = evt.target.value
                                 update(copy)
                             }
                         }>
-                        <option value= {0}>Choose Venue</option>
-                         {
+                        <option value={0}>Choose Venue</option>
+                        {
                             venues.map(
                                 venue => <option
-                                value= {venue.id}>
+                                    value={venue.id}>
                                     {venue.name}
                                 </option>
                             )
-                            }               
-                        {/* <option value= "1">Mercy Lounge</option>
-                        <option value= "2">The East Room</option>
-                        <option value= "3">The Basement East</option> */}
-                        </select>
-                        </div>
-                        </fieldset>
-                        <fieldset>
+                        }
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
                 <div className="form-group">
-                <label for="address" class="form-label">Ticket Price</label>
+                    <label for="address" class="form-label">Ticket Price</label>
                     <input
                         required autoFocus
                         type="number"
@@ -154,8 +148,8 @@ export const UpdateEventForm = () => {
                         value={newEvent.ticketPrice}
                         onChange={
                             (evt) => {
-                                const copy= {...newEvent}
-                                copy.ticketPrice= evt.target.value
+                                const copy = { ...newEvent }
+                                copy.ticketPrice = evt.target.value
                                 update(copy)
                             }
                         } />
@@ -163,7 +157,7 @@ export const UpdateEventForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                <label for="address" class="form-label">Date:</label>
+                    <label for="address" class="form-label">Date:</label>
                     <input
                         required autoFocus
                         type="date"
@@ -171,8 +165,8 @@ export const UpdateEventForm = () => {
                         value={newEvent.date}
                         onChange={
                             (evt) => {
-                                const copy= {...newEvent}
-                                copy.date= evt.target.value
+                                const copy = { ...newEvent }
+                                copy.date = evt.target.value
                                 update(copy)
                             }
                         } />
@@ -180,7 +174,7 @@ export const UpdateEventForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                <label for="address" class="form-label">Time:</label>
+                    <label for="address" class="form-label">Time:</label>
                     <input
                         required autoFocus
                         type="time"
@@ -188,17 +182,17 @@ export const UpdateEventForm = () => {
                         value={newEvent.time}
                         onChange={
                             (evt) => {
-                                const copy= {...newEvent}
-                                copy.time= evt.target.value
+                                const copy = { ...newEvent }
+                                copy.time = evt.target.value
                                 update(copy)
                             }
                         } />
                 </div>
             </fieldset>
-            <button 
+            <button
 
-            onClick = { (clickEvent)=> handleSaveButtonClick(clickEvent) }
-            class="w-100 btn btn-primary btn-lg" type="submit">
+                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                class="w-100 btn btn-primary btn-lg" type="submit">
                 Update Event
             </button>
         </form>

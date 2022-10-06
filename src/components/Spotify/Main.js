@@ -117,8 +117,6 @@ export const Main = () => {
 
   }
 
-  // console.log("this is track detail",trackDetail.id)
-  // var playableLink = "https://open.spotify.com/embed/track/" + trackDetail.id + "?utm_source=generator"
 
   return (
     <div className="container">
